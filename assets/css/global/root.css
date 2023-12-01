@@ -1,0 +1,604 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  max-width: 100%;
+  background: var(--baseD);
+  overflow-x: hidden;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+          user-select: none !important;
+}
+
+/* ############################### */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* ############################### */
+body[data-aos-easing=sleek] [data-aos] {
+  transition-timing-function: var(--sleek);
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--baseD);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--basesecondaryD);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--accentD);
+}
+body::-webkit-scrollbar-thumb:active {
+  background: var(--accentsecondaryD);
+}
+
+[data-aos][data-aos][data-aos-easing=sleek] {
+  transition-timing-function: var(--sleek);
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(../../font/Inter.var.woff2) format("truetype-variations");
+  font-weight: 1 1000;
+}
+@font-face {
+  font-family: Syne;
+  src: url(../../font/Syne[wght].ttf) format("truetype-variations");
+  font-weight: 1 1000;
+}
+@font-face {
+  font-family: JetBrains Mono;
+  src: url(../../font/JetBrainsMono[wght].ttf) format("truetype-variations");
+  font-weight: 1 1000;
+}
+:root {
+  --baseD: rgb(24, 24, 24);
+  --baseL: rgba(252, 242, 233, 1);
+  --alphabaseD: rgba(24, 24, 24, 0.7);
+  --alphabaseL: rgba(252, 242, 233, 0.7);
+  --basesecondaryD: rgb(44, 44, 44);
+  --basesecondaryL: rgb(199, 194, 189);
+  --textD: rgb(255, 255, 255);
+  --textL: rgb(19, 19, 19);
+  --textsecondaryD: rgb(202, 202, 202);
+  --textsecondaryL: rgb(40, 40, 40);
+  --red1: rgb(224, 90, 90);
+  --accentD: rgb(90, 171, 224);
+  --accentL: rgb(252, 193, 125);
+  --redsecondary: rgb(226, 133, 133);
+  --accentsecondaryD: rgb(191, 228, 255);
+  --accentsecondaryL: rgb(255, 220, 191);
+  --accentfillD: rgb(29, 31, 32);
+  --accentfillL: rgb(255, 252, 250);
+  --textaccentD: rgb(94, 186, 255);
+  --textaccentL: rgb(255, 167, 94);
+  --black: black;
+  --blackfL: white;
+  --blacktD: black;
+  --white: white;
+  --textfL: rgb(19, 19, 19);
+  --texttD: rgb(255, 255, 255);
+  --basefL: rgb(252, 242, 233);
+  --basetD: rgb(24, 24, 24);
+  --boxshadowD: rgba(0, 0, 0, 0) 0 0 0px;
+  --boxshadowL: rgba(0, 0, 0, 0.25) 0 2px 12px;
+  --loaderD: url("../../img/local/spinnerD.gif");
+  --loaderL: url("../../img/local/spinnerL.gif");
+  --display: Syne;
+  --content: Inter;
+  --contentsecondary: JetBrains Mono;
+  --sleek: cubic-bezier(0.03, 0.77, 0.34, 1);
+  --accel: cubic-bezier(0.72, 0.06, 0.96, 0.57);
+  --anchorhead: cubic-bezier(0.24, 0.01, 0.01, 1);
+}
+
+[data-theme=light] {
+  --baseD: var(--baseL);
+  --alphabaseD: var(--alphabaseL);
+  --basesecondaryD: var(--basesecondaryL);
+  --textD: var(--textL);
+  --textsecondaryD: var(--textsecondaryL);
+  --accentD: var(--accentL);
+  --accentsecondaryD: var(--accentsecondaryL);
+  --accentfillD: var(--accentfillL);
+  --textaccentD: var(--textaccentL);
+  --blackfL: var(--blacktD);
+  --black: var(--white);
+  --textfL: var(--texttD);
+  --basefL: var(--basetD);
+  --boxshadowD: var(--boxshadowL);
+  --loaderD: var(--loaderL);
+}
+
+a {
+  text-decoration: none !important;
+  color: initial;
+}
+a:link, a:visited {
+  text-decoration: none !important;
+  color: initial;
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+}
+
+.dynamicnav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0 0;
+  z-index: 1;
+  background: var(--alphabaseD);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background 1s var(--sleek);
+  transition: transform 0.2s var(--sleek);
+  height: 40px;
+}
+
+.navOff {
+  background: var(--baseD);
+  transition: all 0.2s var(--sleek);
+}
+
+.navHide {
+  transition: all 0.2s 0.5s var(--sleek);
+  transform: translateY(-40px);
+}
+
+.nlogo {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  transform: scale(0.8);
+}
+
+.npotto {
+  width: 100%;
+  height: 100%;
+  fill: var(--basefL);
+  fill-opacity: 1;
+}
+
+.buttongroup {
+  position: relative;
+  display: flex;
+}
+
+.nbutton {
+  background: rgba(0, 0, 0, 0);
+  color: var(--textD);
+  margin: 0 0.5rem;
+  font-family: var(--contentsecondary);
+  transition: background 0.1s, color 0.2s;
+  font-weight: 100;
+  border-radius: 0 5px 0 0;
+  padding: 0.3rem;
+  /*
+    &:hover::before {
+      content: "::"
+    }*/
+}
+.nbutton:hover {
+  background: var(--textD);
+  color: var(--textfL);
+  font-weight: 900;
+}
+.nbutton:hover .strikethrough {
+  background-color: var(--textfL);
+}
+
+.strikethrough {
+  position: relative;
+  display: block;
+  height: 3px;
+  background-color: var(--textD);
+  width: 0%;
+  transition: all 0.5s var(--sleek);
+}
+
+.activestrike {
+  width: 100%;
+}
+
+.dimmer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+  display: none;
+}
+
+.creationdialog {
+  background: var(--baseD);
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  animation: contentdialog 0.8s forwards var(--sleek);
+  opacity: 0;
+  transition: all 0.3s var(--accel);
+  transform: scale(1.5);
+}
+
+.cdactive {
+  opacity: 1;
+  transition: all 0.3s var(--sleek);
+  transform: scale(1);
+}
+
+.cbutton {
+  text-align: center;
+  color: var(--textD);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 2.5em;
+  transition: font-weight 1s var(--sleek);
+  margin: 1rem 0;
+}
+.cbutton:hover {
+  font-weight: 800;
+  color: var(--accentD);
+}
+
+.blockactive {
+  font-weight: 800;
+  transition: all 0.5s var(--sleek);
+  color: var(--accentsecondaryD);
+}
+
+.exit {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.xcont {
+  width: 40px;
+  height: 40px;
+  margin-right: 2rem;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.xcont:hover .x,
+.xcont ::after {
+  width: 10px;
+}
+
+.x {
+  position: absolute;
+  background: white;
+  width: 4px;
+  transform: rotate(45deg);
+  height: 40px;
+  transition: 0.2s var(--sleek);
+}
+.x::after {
+  content: "";
+  background: white;
+  width: 4px;
+  height: 100%;
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.go {
+  padding: 10px 10px 10px 15px;
+  color: var(--textD);
+  box-sizing: border-box;
+  border: solid 1px var(--textD);
+  display: flex;
+  font-size: 0.9em;
+  font-family: var(--content);
+  font-weight: 500;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+}
+
+.dynamicarrow {
+  stroke-width: 2px;
+  fill: none;
+  stroke: var(--textD);
+  width: 20px;
+  height: 20px;
+  margin-left: 7px;
+  transition: all 0.15s;
+}
+
+.line {
+  opacity: 0;
+}
+
+.arrow,
+.line {
+  transition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.go:hover {
+  background: var(--accentD);
+  border: solid 1px rgba(255, 255, 255, 0);
+}
+.go:hover .dynamicarrow {
+  margin-left: 10px;
+}
+.go:hover .line {
+  opacity: 1;
+}
+.go:hover .arrow {
+  transform: translateX(3px);
+}
+
+.imgs {
+  position: absolute;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.imgs.leftoffset {
+  -o-object-position: left;
+  object-position: left;
+}
+.imgs.rightoffset {
+  -o-object-position: right;
+  object-position: right;
+}
+.imgs.topoffset {
+  -o-object-position: top;
+  object-position: top;
+}
+.imgs.bottomoffset {
+  -o-object-position: bottom;
+  object-position: bottom;
+}
+
+.themetogglecont {
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  opacity: 0;
+  transition: all 0.2s var(--sleek);
+}
+
+#ttogle {
+  display: none;
+}
+
+.togglecont {
+  position: relative;
+  --borderwidth: 2.6px;
+  border-top: solid var(--borderwidth) var(--textD);
+  border-right: solid var(--borderwidth) var(--textD);
+  width: 30px;
+  height: 30px;
+  border-radius: 0 20px 0 0;
+  display: grid;
+  place-items: center;
+  transform-origin: bottom left;
+  transition: all 0.2s cubic-bezier(0.57, 0.07, 0.41, 1.95);
+}
+.togglecont:hover {
+  transform: scale(1.1);
+  border-radius: 0 10px 0 0;
+}
+.togglecont:active {
+  transform: scale(1.3);
+  border-radius: 0 5px 0 0;
+}
+
+.checkboxtrig {
+  min-width: 30px;
+  min-height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.splash {
+  position: absolute;
+  --circle: 200px;
+  width: var(--circle);
+  height: var(--circle);
+  transform: scale(0);
+  border-radius: 50%;
+  background: var(--basefL);
+  z-index: -1;
+}
+
+.splashanim {
+  animation: splash 0.8s var(--sleek);
+}
+@keyframes splash {
+  from {
+    transform: scale(0);
+    opacity: 1;
+    border-width: 2;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+    border-width: 1;
+  }
+}
+.icon {
+  position: relative;
+  color: var(--textD);
+}
+
+.loadblock {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  background: var(--baseD);
+  position: fixed;
+}
+
+.outer {
+  width: 70px;
+  height: 70px;
+  /*border: black 2px;*/
+  border-radius: 50%;
+  animation: spinouter 2s cubic-bezier(0.08, 0.22, 0, 0.99) infinite;
+  transition: border 0.2s cubic-bezier(0.66, 0.02, 0.88, 0.32);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.inner {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  animation: spinouter 2s cubic-bezier(0.08, 0.22, 0, 0.99) 1.5s infinite;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes spinouter {
+  0% {
+    transform: rotate(0deg);
+    border: solid var(--accentD) 4px;
+  }
+  25% {
+    transform: rotate(90deg);
+    border: solid var(--blackfL) 20px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border: solid var(--blackfL) 10px;
+    border-radius: 0px;
+  }
+  75% {
+    transform: rotate(270deg);
+    border: solid var(--blackfL) 30px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border: solid var(--blackfL) 4px;
+  }
+}
+/* .loader {
+    position: fixed;
+    background: var(--baseD);
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .loaderanim {
+    background: var(--loaderD);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 50px;
+  } */
+.initialloc {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.orbcursor {
+  display: none;
+  position: fixed;
+  --orbsize: 10px;
+  width: var(--orbsize);
+  height: var(--orbsize);
+  background: white;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.animactive {
+  animation: orbactive 0.5s forwards var(--sleek);
+}
+
+@keyframes orbactive {
+  from {
+    transform: scale(5);
+  }
+  to {
+    transform: scale(1) translate(calc(var(--orbsize) / -2), calc(var(--orbsize) / -2));
+  }
+}
+.animoff {
+  animation: animoff 1s forwards var(--sleek);
+}
+
+@keyframes animoff {
+  from {
+    transform: scale(1) translate(calc(var(--orbsize) / -2), calc(var(--orbsize) / -2));
+  }
+  to {
+    transform: scale(0);
+  }
+}
+.hoveringattr {
+  animation: hovering 0.5s forwards var(--sleek);
+}
+
+@keyframes hovering {
+  from {
+    transform: scale(1) translate(calc(var(--orbsize) / -2), calc(var(--orbsize) / -2));
+  }
+  to {
+    transform: scale(10) translate(-1px, -1px);
+  }
+}
+.idle {
+  animation: idle 0.5s forwards var(--sleek);
+}
+
+@keyframes idle {
+  from {
+    transform: scale(10) translate(-1px, -1px);
+  }
+  to {
+    transform: scale(1) translate(calc(var(--orbsize) / -2), calc(var(--orbsize) / -2));
+  }
+}
+/*# sourceMappingURL=root.css.map */
