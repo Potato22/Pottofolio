@@ -405,6 +405,7 @@
   padding: 1rem;
   font-family: var(--content);
   font-size: 2em;
+  color: var(--textD);
 }
 
 .titletextcard {
@@ -455,7 +456,6 @@
   font-family: var(--contentsecondary);
   font-size: 1rem;
   font-style: italic;
-  color: var(--textD);
 }
 
 .tcquotation {
@@ -598,18 +598,41 @@
 }
 
 .zoomincontent {
-  max-height: 100vh;
+  max-height: 95vh;
   max-width: 100vw;
   animation: zoom 0.5s forwards var(--sleek);
+}
+
+.zoomalttext {
+  max-width: 60vw;
+  text-align: center;
+  font-family: var(--content);
+  background: var(--blackfL);
+  color: var(--textfL);
+  margin: 0.3em 1rem 0.5em 1rem;
+  animation: zoom 0.5s forwards var(--sleek);
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-family: var(--contentsecondary);
+}
+
+.zoomaltlink {
+  color: var(--accentD) !important;
 }
 
 .zoomincontentAlign {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: zoom-out;
+}
+
+.zoomDisable {
+  display: none;
 }
 @keyframes zoom {
   from {
