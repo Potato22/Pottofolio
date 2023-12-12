@@ -1,9 +1,11 @@
+
+
 function zooming() {
     $(".zoomindimmer").fadeIn(200), $(".zoomin").show(), $(".dynamicnav").addClass("navHide")
 }
 
 function zoomout() {
-    $(".zoomincontent").attr("src", "").removeClass('zoomDisable'), $(".zoomindimmer").fadeOut(200), $(".zoomin").hide(), $(".dynamicnav").removeClass("navHide")
+    $(".zoomincontent").attr("src", "").removeClass('zoomDisable').prop("volume", 1), $(".zoomindimmer").fadeOut(200), $(".zoomin").hide(), $(".dynamicnav").removeClass("navHide")
     $(".zoomalttext").html("")
 }
 document.getElementById("daImg").addEventListener("galleryLoaded", (function () {
@@ -22,7 +24,10 @@ document.getElementById("daImg").addEventListener("galleryLoaded", (function () 
             $(".zoomalttext").html($(this).attr("alt"))
             zooming();
         }
-        //console.log(zoomRequestType)
+        if (zoomRequestType.is('video.imgz.reducevol')) {
+            $("video.zoomincontent").prop("volume", .5);
+        }
+        //console.log(zoomRequestType.is('video.imgz.reducevol'))
     }));
     $(".zoomincontent,.zoomin").click((function () {
         zoomout();
